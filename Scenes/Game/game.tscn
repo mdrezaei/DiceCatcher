@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b3upubjmnk1eq"]
+
+[ext_resource type="Texture2D" uid="uid://dc0sdgvk820yc" path="res://Assets/GemBg.png" id="1_mv0hc"]
+
+[node name="Game" type="Node2D" unique_id=574887589]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1273347775]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_mv0hc")
+centered = false

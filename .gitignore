@@ -1,0 +1,37 @@
+# ===== Godot 4+ specific ignores =====
+# این پوشه شامل فایل‌های کش شده، ایمپورت شده و تنظیمات موقت خود گودو است.
+# این فایل‌ها به صورت خودکار تولید می‌شوند و نیازی به کامیت کردن ندارند.
+.godot/
+/android/
+.nomedia
+~*.dll
+
+# ===== .NET / C# specific ignores =====
+# پوشه‌های خروجی بیلد (Build) پروژه که شامل فایل‌های کامپایل شده سی‌شارپ هستند.
+bin/
+obj/
+.mono/
+*.exe
+data_*/
+mono_crash.*.json
+
+# ===== Visual Studio / Rider IDE specific ignores =====
+# فایل‌های تنظیمات شخصی IDEها که مخصوص هر کاربر است و نباید در مخزن باشد.
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+# ===== General Godot ignores =====
+# این فایل‌ها به صورت خودکار توسط گودو تولید می‌شوند و نباید کامیت شوند.
+*.translation
+export_presets.cfg
+.import/
+export.cfg
+export_credentials.cfg
+
+# ===== Temporary files =====
+*.tmp
+*.bak
+*~
