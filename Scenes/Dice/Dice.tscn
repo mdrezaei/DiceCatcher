@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://c6wsbyjga68up"]
 
 [ext_resource type="Texture2D" uid="uid://crqqjjigmbk3g" path="res://Assets/Dice.png" id="1_dauee"]
+[ext_resource type="Script" uid="uid://5c2ieib2y6nm" path="res://Scenes/Dice/Dice.cs" id="1_p3fax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qcry5"]
 radius = 60.00833
 
-[node name="Dice" type="Area2D" unique_id=15765633]
+[node name="Dice" type="Area2D" unique_id=15765633 node_paths=PackedStringArray("_diceSprite")]
+script = ExtResource("1_p3fax")
+_diceSprite = NodePath("DiceSprite")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678271581]
+[node name="DiceSprite" type="Sprite2D" parent="." unique_id=1678271581]
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_dauee")
 

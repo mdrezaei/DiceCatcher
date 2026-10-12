@@ -9,6 +9,7 @@
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_mv0hc")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Dice" parent="." unique_id=15765633 instance=ExtResource("2_qxfds")]
 position = Vector2(739, 109)
