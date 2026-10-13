@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://boq4e75ypt3hq" path="res://Assets/Fox.png" id="1_2hawp"]
 [ext_resource type="Script" uid="uid://dqv4l2a6o4cy3" path="res://Scenes/Fox/Fox.cs" id="1_xiqmo"]
+[ext_resource type="AudioStream" uid="uid://cm8ttnc76htma" path="res://Assets/eating.wav" id="3_ihywt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hawp"]
 radius = 18.0
@@ -19,3 +20,6 @@ texture = ExtResource("1_2hawp")
 position = Vector2(0, 32)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_2hawp")
+
+[node name="EatSound" type="AudioStreamPlayer2D" parent="." unique_id=1802128469]
+stream = ExtResource("3_ihywt")
