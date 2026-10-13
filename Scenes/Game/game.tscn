@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6wsbyjga68up" path="res://Scenes/Dice/Dice.tscn" id="2_qxfds"]
 [ext_resource type="PackedScene" uid="uid://bx7c4mo02v7sl" path="res://Scenes/Fox/Fox.tscn" id="3_qikps"]
 [ext_resource type="FontFile" uid="uid://curhq7l6gkpfu" path="res://Assets/LuckiestGuy-Regular.ttf" id="5_ciybh"]
+[ext_resource type="AudioStream" uid="uid://cwovxnsm60yy7" path="res://Assets/tetris.mp3" id="6_flgk0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qcry5"]
 font = ExtResource("5_ciybh")
@@ -51,3 +52,9 @@ offset_right = 87.0
 offset_bottom = 64.0
 text = "0000"
 label_settings = SubResource("LabelSettings_qcry5")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1499532038]
+stream = ExtResource("6_flgk0")
+volume_db = -9.0
+autoplay = true
+parameters/looping = true
