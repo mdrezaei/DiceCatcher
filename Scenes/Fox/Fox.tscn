@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bx7c4mo02v7sl"]
+
+[ext_resource type="Texture2D" uid="uid://boq4e75ypt3hq" path="res://Assets/Fox.png" id="1_2hawp"]
+[ext_resource type="Script" uid="uid://dqv4l2a6o4cy3" path="res://Scenes/Fox/Fox.cs" id="1_xiqmo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hawp"]
+radius = 18.0
+height = 144.0
+
+[node name="Fox" type="Area2D" unique_id=924664318 node_paths=PackedStringArray("_foxSprite")]
+script = ExtResource("1_xiqmo")
+_foxSprite = NodePath("FoxSprite")
+
+[node name="FoxSprite" type="Sprite2D" parent="." unique_id=789036788]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_2hawp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271774611]
+position = Vector2(0, 32)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2hawp")
