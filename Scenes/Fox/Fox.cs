@@ -34,5 +34,9 @@ public partial class Fox : Area2D
     private void OnAreaEntered(Area2D area)
     {
         _eatSound.Play();
+        if (area is Dice)
+        {
+            area.QueueFree();
+        }
     }
 }
