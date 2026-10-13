@@ -11,8 +11,10 @@ script = ExtResource("1_p3fax")
 _diceSprite = NodePath("DiceSprite")
 
 [node name="DiceSprite" type="Sprite2D" parent="." unique_id=1678271581]
+position = Vector2(-0.20000075, 59.2)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("1_dauee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1523713930]
+position = Vector2(-0.20000076, 59.200005)
 shape = SubResource("CircleShape2D_qcry5")
