@@ -6,11 +6,14 @@ public partial class Fox : Area2D
     [Export]
     private Sprite2D _foxSprite;
     [Export]
+    private AudioStreamPlayer2D _eatSound;
+    [Export]
     private float _speed = 200.0f;
     private float _move;
 
     public override void _Ready()
     {
+        AreaEntered += OnAreaEntered;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,5 +29,10 @@ public partial class Fox : Area2D
     public override void _PhysicsProcess(double delta)
     {
         Position += new Vector2(_move * (float)delta * _speed, 0);
+    }
+
+    private void OnAreaEntered(Area2D area)
+    {
+        _eatSound.Play();
     }
 }
