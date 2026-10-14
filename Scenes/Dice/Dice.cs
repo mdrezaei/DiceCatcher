@@ -3,6 +3,9 @@ using System;
 
 public partial class Dice : Area2D
 {
+    [Signal]
+    public delegate void GameOverEventHandler();
+
     [Export]
     private Sprite2D _diceSprite;
     private const float _speed = 80.0f;
@@ -32,6 +35,7 @@ public partial class Dice : Area2D
         Rect2 vpr = GetViewportRect();
         if (Position.Y > vpr.End.Y)
         {
+            EmitSignal(SignalName.GameOver);
             SetPhysicsProcess(false);
             QueueFree();
         }

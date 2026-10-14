@@ -15,12 +15,13 @@ outline_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Game" type="Node2D" unique_id=574887589 node_paths=PackedStringArray("_fox", "_pointLabel", "_spawnTimer")]
+[node name="Game" type="Node2D" unique_id=574887589 node_paths=PackedStringArray("_fox", "_pointLabel", "_spawnTimer", "_music")]
 script = ExtResource("1_i1e5p")
 _fox = NodePath("Fox")
 _pointLabel = NodePath("PointUILabel")
 _diceScene = ExtResource("2_qxfds")
 _spawnTimer = NodePath("SpawnTimer")
+_music = NodePath("Music")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1273347775]
 scale = Vector2(0.6, 0.6)

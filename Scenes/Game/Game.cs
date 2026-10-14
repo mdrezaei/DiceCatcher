@@ -11,6 +11,9 @@ public partial class Game : Node2D
     private PackedScene _diceScene;
     [Export]
     private Timer _spawnTimer;
+    [Export]
+    private AudioStreamPlayer _music;
+    private readonly AudioStream _gameOver = GD.Load<AudioStream>("res://Assets/game_over.wav");
     private int _points = 0;
     private const float _margin = 100.0f;
 
@@ -28,8 +31,17 @@ public partial class Game : Node2D
         Rect2 vpr = GetViewportRect();
         float x = (float)GD.RandRange(vpr.Position.X + _margin, vpr.End.X - _margin);
 
-        dice.Position = new Vector2(x, _margin);
+        dice.Position = new Vector2(x, -(_margin));
+        dice.GameOver += GameOver;
         AddChild(dice);
+    }
+
+    private void GameOver()
+    {
+        GD.Print("Game Over");
+        _music.Stop();
+        _music.Stream = _gameOver;
+        _music.Play();
     }
 
     private void OnPointScored()
