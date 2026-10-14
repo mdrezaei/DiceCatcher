@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qcry5"]
 radius = 38.0
 
-[node name="Dice" type="Area2D" unique_id=15765633 node_paths=PackedStringArray("_diceSprite")]
+[node name="Dice" type="Area2D" unique_id=15765633 node_paths=PackedStringArray("_diceSprite") groups=["Stoppable"]]
 z_index = 1
 script = ExtResource("1_p3fax")
 _diceSprite = NodePath("DiceSprite")
