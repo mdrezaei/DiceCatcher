@@ -15,10 +15,12 @@ outline_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Game" type="Node2D" unique_id=574887589 node_paths=PackedStringArray("_fox", "_pointLabel")]
+[node name="Game" type="Node2D" unique_id=574887589 node_paths=PackedStringArray("_fox", "_pointLabel", "_spawnTimer")]
 script = ExtResource("1_i1e5p")
 _fox = NodePath("Fox")
 _pointLabel = NodePath("PointUILabel")
+_diceScene = ExtResource("2_qxfds")
+_spawnTimer = NodePath("SpawnTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1273347775]
 scale = Vector2(0.6, 0.6)
@@ -26,26 +28,11 @@ texture = ExtResource("1_mv0hc")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Dice" parent="." unique_id=15765633 instance=ExtResource("2_qxfds")]
-position = Vector2(812, 196)
-scale = Vector2(0.6, 0.6)
-
-[node name="Dice2" parent="." unique_id=1346903341 instance=ExtResource("2_qxfds")]
-position = Vector2(644, 114)
-scale = Vector2(0.6, 0.6)
-
-[node name="Dice4" parent="." unique_id=1015806074 instance=ExtResource("2_qxfds")]
-position = Vector2(870.00006, -40)
-scale = Vector2(0.6, 0.6)
-
-[node name="Dice3" parent="." unique_id=1971152629 instance=ExtResource("2_qxfds")]
-position = Vector2(506, 31)
-scale = Vector2(0.6, 0.6)
-
 [node name="Fox" parent="." unique_id=924664318 instance=ExtResource("3_qikps")]
 position = Vector2(616, 560)
 
 [node name="PointUILabel" type="Label" parent="." unique_id=1733944156]
+z_index = 2
 offset_left = 47.0
 offset_top = 41.0
 offset_right = 87.0
@@ -58,3 +45,7 @@ stream = ExtResource("6_flgk0")
 volume_db = -9.0
 autoplay = true
 parameters/looping = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2076527058]
+wait_time = 2.0
+autostart = true
