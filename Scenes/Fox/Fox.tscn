@@ -8,7 +8,7 @@
 radius = 18.0
 height = 144.0
 
-[node name="Fox" type="Area2D" unique_id=924664318 node_paths=PackedStringArray("_foxSprite", "_eatSound")]
+[node name="Fox" type="Area2D" unique_id=924664318 node_paths=PackedStringArray("_foxSprite", "_eatSound") groups=["Stoppable"]]
 script = ExtResource("1_xiqmo")
 _foxSprite = NodePath("FoxSprite")
 _eatSound = NodePath("EatSound")

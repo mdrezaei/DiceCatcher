@@ -16,7 +16,16 @@ public partial class Game : Node2D
     private readonly AudioStream _gameOver = GD.Load<AudioStream>("res://Assets/game_over.wav");
     private int _points = 0;
     private const float _margin = 100.0f;
+    private const string _stoppable = "Stoppable";
 
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (@event.IsActionPressed("restart"))
+        {
+            GetTree().ReloadCurrentScene();
+        }
+    }
     public override void _Ready()
     {
         _fox.PointScored += OnPointScored;
@@ -36,12 +45,23 @@ public partial class Game : Node2D
         AddChild(dice);
     }
 
+    private void StopAll()
+    {
+        _spawnTimer.Stop();
+        var toStop = GetTree().GetNodesInGroup(_stoppable);
+        foreach (Node node in toStop)
+        {
+            node.SetPhysicsProcess(false);
+        }
+    }
+
     private void GameOver()
     {
         GD.Print("Game Over");
         _music.Stop();
         _music.Stream = _gameOver;
         _music.Play();
+        StopAll();
     }
 
     private void OnPointScored()
