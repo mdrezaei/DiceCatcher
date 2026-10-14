@@ -3,6 +3,9 @@ using System;
 
 public partial class Fox : Area2D
 {
+    [Signal]
+    public delegate void PointScoredEventHandler();
+
     [Export]
     private Sprite2D _foxSprite;
     [Export]
@@ -33,10 +36,11 @@ public partial class Fox : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        _eatSound.Play();
         if (area is Dice)
         {
+            _eatSound.Play();
             area.QueueFree();
+            EmitSignal(SignalName.PointScored);
         }
     }
 }

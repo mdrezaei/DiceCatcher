@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://b3upubjmnk1eq"]
 
+[ext_resource type="Script" uid="uid://d2mnaremuyd8d" path="res://Scenes/Game/Game.cs" id="1_i1e5p"]
 [ext_resource type="Texture2D" uid="uid://dc0sdgvk820yc" path="res://Assets/GemBg.png" id="1_mv0hc"]
 [ext_resource type="PackedScene" uid="uid://c6wsbyjga68up" path="res://Scenes/Dice/Dice.tscn" id="2_qxfds"]
 [ext_resource type="PackedScene" uid="uid://bx7c4mo02v7sl" path="res://Scenes/Fox/Fox.tscn" id="3_qikps"]
+[ext_resource type="FontFile" uid="uid://curhq7l6gkpfu" path="res://Assets/LuckiestGuy-Regular.ttf" id="5_ciybh"]
+[ext_resource type="AudioStream" uid="uid://cwovxnsm60yy7" path="res://Assets/tetris.mp3" id="6_flgk0"]
 
-[node name="Game" type="Node2D" unique_id=574887589]
+[sub_resource type="LabelSettings" id="LabelSettings_qcry5"]
+font = ExtResource("5_ciybh")
+font_size = 48
+outline_size = 8
+outline_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node2D" unique_id=574887589 node_paths=PackedStringArray("_fox", "_pointLabel")]
+script = ExtResource("1_i1e5p")
+_fox = NodePath("Fox")
+_pointLabel = NodePath("PointUILabel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1273347775]
 scale = Vector2(0.6, 0.6)
@@ -13,8 +27,34 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Dice" parent="." unique_id=15765633 instance=ExtResource("2_qxfds")]
-position = Vector2(739, 109)
+position = Vector2(812, 196)
+scale = Vector2(0.6, 0.6)
+
+[node name="Dice2" parent="." unique_id=1346903341 instance=ExtResource("2_qxfds")]
+position = Vector2(644, 114)
+scale = Vector2(0.6, 0.6)
+
+[node name="Dice4" parent="." unique_id=1015806074 instance=ExtResource("2_qxfds")]
+position = Vector2(870.00006, -40)
+scale = Vector2(0.6, 0.6)
+
+[node name="Dice3" parent="." unique_id=1971152629 instance=ExtResource("2_qxfds")]
+position = Vector2(506, 31)
 scale = Vector2(0.6, 0.6)
 
 [node name="Fox" parent="." unique_id=924664318 instance=ExtResource("3_qikps")]
 position = Vector2(616, 560)
+
+[node name="PointUILabel" type="Label" parent="." unique_id=1733944156]
+offset_left = 47.0
+offset_top = 41.0
+offset_right = 87.0
+offset_bottom = 64.0
+text = "0000"
+label_settings = SubResource("LabelSettings_qcry5")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1499532038]
+stream = ExtResource("6_flgk0")
+volume_db = -9.0
+autoplay = true
+parameters/looping = true
